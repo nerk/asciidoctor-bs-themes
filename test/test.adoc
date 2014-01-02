@@ -1,0 +1,138 @@
+:toc:
+:source-highlighter: coderay
+:icons: font
+
+= Level 1
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
+nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
+Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+== Level 2
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
+nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
+Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+=== Level 3
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
+nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
+Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+==== Level 4
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
+nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
+Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+===== Level 5
+
+====== Level 6
+
+
+[NOTE]
+--
+This is an open block styled as NOTE.
+This is an open block
+
+  * item 1
+  * item 2
+  * item 3
+  
+--
+
+TIP: This is a tip.
+
+IMPORTANT: This is important.
+
+WARNING: This is a warning.
+
+CAUTION: This is caution.
+
+A regular listing block without highlighting:
+
+----
+class Main {
+   void main(String ars[]) {
+       int a = 1;
+   }
+}
+----
+
+Source code listing:
+
+[source,java]
+----
+class Main {
+   void main(String ars[]) {
+       int a = 1;
+   }
+}
+----
+
+.Optional Title
+==========================
+*Example* Block
+
+Use: examples :)
+
+Default caption "Example:"
+can be changed using
+
+ [caption="Custom: "]
+
+before example block.
+==========================
+
+.Optional Title
+....
+*Literal* Block
+
+Use: workaround when literal
+paragraph (indented) like
+  1. First.
+  2. Second.
+incorrectly processed as list.
+....
+ 
+.Optional Title
+[quote, cite author, cite source]
+____
+*Quote* Block
+
+Use: cite somebody
+____
+
+
+.An example table with additional Bootstrap role "table-striped"
+
+[role="table-striped",options="header,footer"]
+|=======================
+|Col 1|Col 2      |Col 3
+|1    |Item 1     |a
+|2    |Item 2     |b
+|3    |Item 3     |c
+|6    |Three items|d
+|=======================
+
+.Multiline cells, row/col span with row separators
+[options="header",grid="rows"]
+|====
+|Date |Duration |Avg HR |Notes
+
+|22-Aug-08 .2+^.^|10:24 | 157 |
+Worked out MSHR (max sustainable
+heart rate) by going hard
+for this interval.
+
+|22-Aug-08 | 152 |
+Back-to-back with previous interval.
+
+|24-Aug-08 3+^|none
+
+|====

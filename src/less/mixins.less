@@ -1,0 +1,17 @@
+.border-radius (@radius: @border-radius-base) {
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.border-style (@size; @style; @color) when (@size > 0) {
+	border-style: @style;
+    border-color: @color;
+    .border-radius;
+}
+
+.box-shadow(@arguments) {
+    -webkit-box-shadow: @arguments;
+    -moz-box-shadow: @arguments;
+    box-shadow: @arguments;
+}
