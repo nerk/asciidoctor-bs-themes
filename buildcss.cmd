@@ -1,6 +1,6 @@
 @echo off
 
-set styles=default cerulean cosmo cyborg flatly readable slate spacelab yeti
+set styles=default amelia cerulean cosmo cyborg flatly journal readable slate spacelab yeti
 
 FOR %%A IN (%styles%) DO (
    echo creating css\bootstrap_%%A.css

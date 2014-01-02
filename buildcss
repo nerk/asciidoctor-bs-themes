@@ -1,6 +1,6 @@
 #!/bin/bash
 
-styles="default cerulean cosmo cyborg flatly readable slate spacelab yeti"
+styles="default amelia cerulean cosmo cyborg flatly journal readable slate spacelab yeti"
 
 for i in $styles
 do

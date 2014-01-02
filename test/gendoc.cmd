@@ -1,6 +1,6 @@
 @echo off
 
-set styles=default cerulean cosmo cyborg flatly readable slate spacelab yeti
+set styles=default amelia cerulean cosmo cyborg flatly journal readable slate spacelab yeti
 
 IF NOT EXIST output MD output
 
