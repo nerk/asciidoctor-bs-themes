@@ -1,0 +1,9 @@
+#!/bin/bash
+
+styles="default cerulean cosmo cyborg flatly readable slate spacelab yeti"
+
+for i in $styles
+do
+   echo creating css\bootstrap_$i.css
+   lessc src/less/styles_$i.less css/bootstrap_$i.css
+done
