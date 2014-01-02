@@ -22,12 +22,10 @@ CSS files, you can also just grab the +variables.less+ file for almost any of th
 This project uses the Bootstrap +.less+ sources, +variables.less+ files from Bootswatch, and additional 
 styling specific to AsciiDoc to create AsciiDoc-enhanced versions of the Bootswatch themes. The 
 AsciiDoc specific styling is based on Dan Allen's Asciidoctor SASS style sheets 
-https://github.com/asciidoctor/asciidoctor-stylesheet-factory[].
+https://github.com/asciidoctor/asciidoctor-stylesheet-factory[asciidoctor-stylesheet-factory].
 
 Rather than using Bootswatch themes, you may also create a custom theme by providing your own +variables.less+ file. 
-A good online resource for creating your own style is
-
-http://pikock.github.io/bootstrap-magic/index.html[]
+A good online resource for creating your own style is http://pikock.github.io/bootstrap-magic/index.html[Bootstrap Magic].
 
 You may conveniently save your +variables.less+ directly from the site.
 
@@ -38,7 +36,7 @@ The following software must be installed before you start:
   * http://www.lesscss.org/[Less]
   * http://asciidoctor.org[Asciidoctor]
 
-NOTE: Make sure that the Ruby gems 'tilt', 'request', and 'coderay' are installed.
+NOTE: Make sure that the Ruby gems 'tilt' and 'coderay' are installed.
 
 == Setup
 
@@ -57,11 +55,13 @@ Next, switch to the 'asciidoctor-bs-themes' directory and generate the CSS files
 This creates the following CSS files in directory +css+:
 
 -----
+bootstrap_amelia.css
 bootstrap_cerulean.css
 bootstrap_cosmo.css
 bootstrap_cyborg.css
 bootstrap_default.css
 bootstrap_flatly.css
+bootstrap_journal.css
 bootstrap_readable.css
 bootstrap_slate.css
 bootstrap_spacelab.css
