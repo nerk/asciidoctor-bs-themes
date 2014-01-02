@@ -24,12 +24,12 @@ styling specific to AsciiDoc to create AsciiDoc-enhanced versions of the Bootswa
 AsciiDoc specific styling is based on Dan Allen's Asciidoctor SASS style sheets 
 https://github.com/asciidoctor/asciidoctor-stylesheet-factory[].
 
-Rather than using Bootswatch theme, you may also create your own theme by providing your own +variables.less+ file. 
+Rather than using Bootswatch themes, you may also create a custom theme by providing your own +variables.less+ file. 
 A good online resource for creating your own style is
 
 http://pikock.github.io/bootstrap-magic/index.html[]
 
-You may save your +variables.less+ directly from the site.
+You may conveniently save your +variables.less+ directly from the site.
 
 == Prerequisites
 
@@ -38,7 +38,7 @@ The following software must be installed before you start:
   * http://www.lesscss.org/[Less]
   * http://asciidoctor.org[Asciidoctor]
 
-NOTE: Make sure that the Ruby gems 'tilt' and 'coderay' are installed.
+NOTE: Make sure that the Ruby gems 'tilt', 'request', and 'coderay' are installed.
 
 == Setup
 
@@ -85,9 +85,12 @@ from the command line. For example, to use the +bootstrap_flatly+ style, invoke:
 
 Rather than using 'asciidoctor', you may also use Stuart Rackham's http://www.asciidoc.org[asciidoc] instead:
  
- asciidoc -a stylesheet="css/bootstrap_flatly.css" thedocument.adoc
+ asciidoc -a stylesheet="`pwd`/css/bootstrap_flatly.css" thedocument.adoc
  
-Unless you specfy the +linkcss+ attribute, the stylesheet is directly embedded into the generated document.
+NOTE: +asciidoc+ (unlike +asciidoctor+) requires an absolute path to the stylesheet, if the stylesheet is
+not globally installed.
+ 
+Unless you specify the +linkcss+ attribute, the stylesheet is directly embedded into the generated document.
 The reference to the stylesheet refers to its location on the file system at *compile time* of the document.
 
 For including just a reference to the stylesheet, use:
@@ -97,8 +100,8 @@ For including just a reference to the stylesheet, use:
 Please note that in this case, the reference to the stylesheet is resolved when the generated
 document is displayed in the browser.
 
-If you want to tweak the generated output further and also want to include additional JavaScript libraries
-into the generated document, you my specify your own Asciidoctor templates.
+If you want to tweak the generated output further or want to include additional JavaScript libraries
+into the generated document, you may specify your own Asciidoctor templates.
 You can find a modified +document.html.erb+ template under
 
  src/templates/html5/document.html.erb
@@ -112,6 +115,61 @@ NOTE: The included +document.html.erb+ template was tested with Asciidoctor 0.1.
 not work with other versions.
 
 == Custom Styles
+
+If you want to create a custom style based on Bootstrap, do the following (we assume your
+new style is named 'awesome'):
+
+ * Create a new file +variables_awesome.less+ and put it into folder +src/less+. 
+   For example, you may use http://pikock.github.io/bootstrap-magic/index.html[Bootstrap Magic] 
+   to create a theme and save the variables to a file.
+ * Create a new file named +styles_awesome.less+ with the following content:
+   +
+   ----
+   @import url(http://raw.github.com/twbs/bootstrap/master/less/bootstrap.less);
+
+   @import "variables_awesome.less";
+
+   @import "adocvariables.less";
+   @import "asciidoc.less";
+   @import "awesome-icons.less";
+   @import "mixins.less";
+   ----
+ * Invoke 
+   +
+   ----
+   lessc src/less/styles_awesome.less css/bootstrap_awesome.css
+   ----
+   +
+   from the toplevel directory to create the new CSS file.
+
+== Using Special Bootstrap Markup
+
+Bootstrap components use +class+ for additional styling. 
+
+For example, Bootstrap tables may be styled by adding one or more of the following classes:
+
+ * table-striped
+ * table-bordered
+ * table-hover
+ * table-condensed
+ 
+If you want to use these additional styles for your AsciiDoc tables, you
+can use the 'role' attribute:
+
+----
+[role="table-striped table-hover",options="header,footer"]
+|=======================
+|Col 1|Col 2      |Col 3
+|1    |Item 1     |a
+|2    |Item 2     |b
+|3    |Item 3     |c
+|6    |Three items|d
+|=======================
+----
+
+NOTE: Default tables in Bootstrap are not bordered and without grid lines by default. However, to be compatible with
+default AsciiDoc behavior, the generated styles create fully bordered tables with grid lines. Grid lines and borders
+may be explicitly switched off using the +grid' and +frame+ attributes.
 
 == Shortcomings
 
