@@ -44,7 +44,7 @@ NOTE: Make sure that the Ruby gems 'tilt', 'request', and 'coderay' are installe
 
 Clone the source from GitHub:
 
- $ git clone --recurse-submodules git://github.com/nerk/asciidoctor-bs-themes
+ $ git clone --recurse-submodules https://github.com/nerk/asciidoctor-bs-themes
  
 NOTE: If you don't want to use GIT, you may also download the code as a +.zip+ file and unpack it 
 to a local directory.
@@ -52,7 +52,7 @@ to a local directory.
 Next, switch to the 'asciidoctor-bs-themes' directory and generate the CSS files:
 
  $ cd asciidoctor-bs-themes
- $ buildcss
+ $ ./buildcss
 
 This creates the following CSS files in directory +css+:
 
@@ -71,7 +71,7 @@ bootstrap_yeti.css
 You may test your created themes by generating some example documents from directory +test+:
 
  $ cd test
- $ gendoc
+ $ ./gendoc
  
 This compiles the original AsciiDoc User Guide by Stuart Rackham and a file named 'test.adoc'
 for each of the generated styles and puts the HTML output into directory 'output'.
