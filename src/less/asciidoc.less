@@ -3,16 +3,6 @@
  * https://github.com/asciidoctor/asciidoctor-stylesheet-factory/tree/master/sass/components
  */
  
-*:not(pre) > code {
-//code {
-  font-size: @code-font-size;
-  //padding: @code-padding;
-  white-space: nowrap;
-  background-color: @code-bg;
-  border: @code-border-size @code-border-style @code-border-color;
-  .border-radius;
-  text-shadow: none;
-}
 
 pre {
   line-height: @pre-line-height;
@@ -22,19 +12,24 @@ pre {
   font-weight: normal;
 }
 
-
+/*
+ * <code> is styled differently if inside <pre>
+ */
 pre > code {
   font-size: @code-font-size;
   white-space: inherit;
   color: @text-color;
   font-family: @font-family-monospace;
-//  padding: 0;
+  //padding: 0;
   //background: @code-bg;
   font-weight: normal;
 //  border: none;
 }
 
-
+/*
+ * Experimental macro kbd:[]
+ */
+ 
 kbd.keyseq {
   color: lighten(@text-color, 20%);
 }
@@ -64,16 +59,22 @@ kbd kbd:last-child {
 }
 
 
+/*
+ * Experimental macro menu:[]
+ */
+
 .menuseq, .menu {
   color: darken(@text-color, 10%);
 }
 
-b.button:before {
-  content: '[ ';
-}
-
-b.button:after {
-  content: ' ]';
+/*
+ * Experimental macro btn:[]
+ */
+ 
+.button {
+   .btn;
+   .btn-primary;
+   .btn-xs;
 }
 
 #header,
@@ -276,9 +277,9 @@ b.button:after {
   line-height: @line-height-computed * .9;
 }
 
-.sect1 {
-  padding-bottom: @gap-extra-wide;
-}
+//.sect1 {
+//  padding-bottom: @gap-extra-wide;
+//}
 
 //.sect1 + .sect1 {
 //  border-top: @sect-divider-size @sect-divider-style @sect-divider-color;
