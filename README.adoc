@@ -121,11 +121,11 @@ new style is named 'awesome'):
 
 * Create a new directory +src/less/styles/awesome+
 
-* Inside +src/styles/awesome+, create a new file +variables.less+. 
+* Inside +src/less/styles/awesome+, create a new file +variables.less+. 
    For example, you may use http://pikock.github.io/bootstrap-magic/index.html[Bootstrap Magic] 
    to create a theme and save the variables to a file.
    
-* Inside +src/styles/awesome+, create a new file named +styles.less+ with the following content:
+* Inside +src/less/styles/awesome+, create a new file named +styles.less+ with the following content:
 +
 ----
 @import url(http://raw.github.com/twbs/bootstrap/master/less/bootstrap.less);
