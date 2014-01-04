@@ -104,10 +104,6 @@ b.button:after {
     padding-bottom: 32px;
   }
 
-  span {
-    color: @blockquote-font-color;
-  }
-
   #revnumber {
     text-transform: capitalize;
   }
@@ -399,8 +395,7 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
   td.content {
     padding-left: @gap-standard;
     padding-right: @gap-standard;
-    border-left: @hr-border-width @hr-border-style @hr-border-color; 
-    color: @blockquote-font-color;
+    border-left: @hr-border-width @hr-border-style @blockquote-border-color; 
 
     //& > .paragraph:last-child > p {
     & > :last-child > :last-child {
@@ -410,11 +405,11 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
 }
 
 .exampleblock > .content {
-  padding-left: @gap-standard;
-  padding-right: @gap-standard;
-  border-left: @hr-border-width @hr-border-style @hr-border-color;
-  color: @blockquote-font-color;
-  margin-bottom: @line-height-computed / 2;
+  padding: (@line-height-computed / 2) @line-height-computed;
+  margin: 0 0 @line-height-computed;
+  border-left: @hr-border-width @hr-border-style @example-border-color;
+  color: @example-font-color;
+  //margin-bottom: @line-height-computed / 2;
 }
 
 .sidebarblock {
@@ -425,14 +420,6 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
     line-height: @line-height-computed;  
     }
 	.well;
-
-	//background-color: @gray-lighter;
-	//border-color: @gray-dark;
-	//border-width: 1px;
-	//border-style: solid;
-	//padding: @gap-narrow;
-	//.border-radius;
-
   }
 }
 
@@ -453,7 +440,6 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
   }
   & pre, & pre[class] {
     border: 0;
-    //margin-left: @gap-wide;
     padding: 0;
     word-wrap: break-word;
 
@@ -482,8 +468,6 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
   & pre, & pre[class] {
     border-width: @pre-border-size;
 	.border-style(@pre-border-size; @pre-border-style; @pre-border-color);
-//  margin-left: @gap-wide;
-//	margin-right: @gap-wide;
     padding: @pre-padding;
     word-wrap: break-word;
 
@@ -526,13 +510,13 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
 .listingblock:hover code[class*=" language-"]:before {
   text-transform: uppercase;
   font-size: 0.9em;
-  color: #999;
+  color: @pre-color;
 
   //float: right;
   //or
   position: absolute;
   top: @gap-narrow;
-  right: @gap-narrow;
+  right: @gap-wide;
 
   // use the next three styles to "cover-up"
   //position: relative;
@@ -543,7 +527,7 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
 .listingblock.terminal pre .command:before {
   content: attr(data-prompt); 
   padding-right: 0.5em;
-  color: #999;
+  color: @pre-color;
 }
 
 .listingblock.terminal pre .command:not([data-prompt]):before {
@@ -564,18 +548,15 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
 .listingblock:hover code.yaml:before { content: "yaml"; }
 
 
-// AsciiDoc quoteblock output is different from what Foundation expects
 .quoteblock {
-  margin: @line-height-computed 0 @line-height-computed 0;
-  padding-left: @gap-standard;
-  padding-right: @gap-standard;
-
-  border-left: @hr-border-width @hr-border-style @hr-border-color;
+  padding: (@line-height-computed / 2) @line-height-computed;
+  margin: 0 0 @line-height-computed;
+  font-size: (@font-size-base * 1.25);
+  border-left: @hr-border-width @hr-border-style @blockquote-border-color;
 	
   blockquote {
     padding: 0 0 @gap-narrow 0;
     border: 0;
-    color: @gray-dark;
 	
 	& p {
 	   font-size: @font-size-base;
@@ -586,40 +567,26 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
       margin-bottom: 0;
     }
   }
-
   .attribution {
-    margin-top: -.25em;
-    padding-bottom: @gap-narrow;
-    font-size: @font-size-base;
-    color: @text-color;
-	text-align: right;
-    br {
-      display: none;
-    }
-    cite {
-      display: block;
-	  //margin-bottom: @gap-narrow;
-    }
-  }
+     .attribution-style;
+  };
 }
 
 .verseblock {
-  margin: @line-height-computed 0 @line-height-computed 0;
-  padding-left: @gap-standard;
-  padding-right: @gap-standard;
-
-  border-left: @hr-border-width @hr-border-style @hr-border-color;
+  padding: (@line-height-computed / 2) @line-height-computed;
+  margin: 0 0 @line-height-computed;
+  font-size: (@font-size-base * 1.25);
+  border-left: @hr-border-width @hr-border-style @blockquote-border-color;
 	
   pre {
     padding: 0 0 @gap-narrow 0;
     border: 0;
-    color: @gray-dark;
+    color: @text-color;
 	background-color: @body-bg;
 	font-size: @font-size-base;
 	font-family: @font-family-base;
 	
 	& p {
-	   
 	   line-height: @line-height-computed;
 	}
 	
@@ -627,21 +594,9 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
       margin-bottom: 0;
     }
   }
-
   .attribution {
-    margin-top: -.25em;
-    padding-bottom: @gap-narrow;
-    font-size: @font-size-base;
-    color: @text-color;
-	text-align: left;
-    br {
-      display: none;
-    }
-    cite {
-      display: block;
-	  //margin-bottom: @gap-narrow;
-    }
-  }
+     .attribution-style;
+  };
 }
 
 
@@ -664,10 +619,10 @@ table.pyhltable td.code {
 
 .highlight.pygments .lineno,
 table.pyhltable td:not(.code) {
-  color: #999;
+  color: @pre-color;
   padding-left: 0;
   padding-right: .5em;
-  border-right: 1px solid @hr-border-color;
+  border-right: 1px solid @blockquote-border-color;
 }
 
 .highlight.pygments .lineno {

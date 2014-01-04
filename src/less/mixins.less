@@ -10,8 +10,23 @@
     .border-radius;
 }
 
-.box-shadow(@arguments) {
-    -webkit-box-shadow: @arguments;
-    -moz-box-shadow: @arguments;
-    box-shadow: @arguments;
+.attribution-style() {
+    display: block;
+    font-size: 80%; 
+    line-height: @line-height-base;
+    color: @blockquote-small-color;
+    margin-top: -.25em;
+    padding-bottom: @gap-narrow;
+	text-align: right;
+	
+	//&:before {
+      //content: '\2014 \00A0'; // em dash, nbsp
+    //}
+	
+    br {
+      display: none;
+    }
+    cite {
+      display: block;
+    }
 }
