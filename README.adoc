@@ -119,27 +119,29 @@ not work with other versions.
 If you want to create a custom style based on Bootstrap, do the following (we assume your
 new style is named 'awesome'):
 
-* Create a new file +variables_awesome.less+ and put it into folder +src/less+. 
+* Create a new directory +src/less/styles/awesome+
+
+* Inside +src/styles/awesome+, create a new file +variables.less+. 
    For example, you may use http://pikock.github.io/bootstrap-magic/index.html[Bootstrap Magic] 
    to create a theme and save the variables to a file.
    
-* Create a new file named +styles_awesome.less+ with the following content:
+* Inside +src/styles/awesome+, create a new file named +styles.less+ with the following content:
 +
 ----
 @import url(http://raw.github.com/twbs/bootstrap/master/less/bootstrap.less);
 
-@import "variables_awesome.less";
+@import "variables.less";
 
-@import "adocvariables.less";
-@import "asciidoc.less";
-@import "awesome-icons.less";
-@import "mixins.less";
+@import "../../adocvariables.less";
+@import "../../asciidoc.less";
+@import "../../awesome-icons.less";
+@import "../../mixins.less";
 ----
    
 * Invoke 
 +
 ----
-lessc src/less/styles_awesome.less css/bootstrap_awesome.css
+lessc src/less/styles/awesome/styles.less css/bootstrap_awesome.css
 ----
 from the toplevel directory to create the new CSS file.
 
