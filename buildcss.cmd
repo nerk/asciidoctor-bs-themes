@@ -4,5 +4,5 @@ set styles=default amelia cerulean cosmo cyborg flatly journal readable slate sp
 
 FOR %%A IN (%styles%) DO (
    echo creating css\bootstrap_%%A.css
-   call lessc src\less\styles_%%A.less css\bootstrap_%%A.css
+   call lessc src\less\styles\%%A\styles.less css\bootstrap_%%A.css
 )

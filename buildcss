@@ -4,6 +4,6 @@ styles="default amelia cerulean cosmo cyborg flatly journal readable slate space
 
 for i in $styles
 do
-   echo creating css\bootstrap_$i.css
-   lessc src/less/styles_$i.less css/bootstrap_$i.css
+   echo creating css/bootstrap_$i.css
+   lessc src/less/styles/$i/styles.less css/bootstrap_$i.css
 done
