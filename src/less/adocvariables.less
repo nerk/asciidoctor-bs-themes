@@ -10,31 +10,25 @@
 @icon-text-shadow: none;
 @icon-width: 60px;
 
-@code-font-size: @font-size-small;
-@code-padding: @padding-small-vertical @padding-small-horizontal;
-@code-border-size: 1px;
-@code-border-style: solid;
-@code-border-color: @pre-border-color;
-
-@pre-line-height: @line-height-computed;
-@pre-font-family: @font-family-monospace;
-@pre-font-size: @font-size-base;
-@pre-border-style: solid;
-@pre-border-size: 1px;
+@pre-font-size: (@font-size-base - 1);
 @pre-padding: @padding-small-vertical @padding-small-horizontal;
 
 @block-margin-bottom: @line-height-computed;
 @block-padding: @padding-small-vertical @padding-small-horizontal;
 @block-padding-bottom: @padding-small-vertical;
 
-@hr-border-width: 3px;
-@hr-border-style: solid;
+@blockquote-border-width: 5px;
+@blockquote-border-style: solid;
+
+@literalblock-color: @pre-color;
+
+@example-border-color: @blockquote-border-color;
+@example-border-width: @blockquote-border-width;
+@example-border-style: @blockquote-border-style;
+@example-font-color: @text-color;
 
 @title-font-color: @text-color;
 @title-font-weight: normal;
-
-@example-font-color: @text-color;
-@example-border-color: @blockquote-border-color;
 
 @sect-divider-size: 3px;
 @sect-divider-style: double;

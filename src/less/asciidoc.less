@@ -16,20 +16,16 @@ kbd.keyseq {
   color: lighten(@text-color, 20%);
 }
 
+
 kbd:not(.keyseq) {
-  display: inline-block;
-  color: @text-color;
-  font-size: 0.8em;
-  line-height: 1.4;
-  background-color: #F7F7F7;
-  //border: 1px solid @pre-border-color;
-  border: 1px solid #ccc;
-  .border-radius(3px);
-  .box-shadow(~"0 1px 0 rgba(0, 0, 0, .2), 0 0 0 2px white inset");
-  margin: -0.15em 0.15em 0 0.15em;
-  padding: 0.2em 0.6em 0.2em 0.5em;
-  vertical-align: middle;
-  white-space: nowrap;
+  /* Orig. styling from TBS code.less 
+  padding: 2px 4px;
+  font-size: 90%;
+  color: @kbd-color;
+  background-color: @kbd-bg;
+  border-radius: @border-radius-small;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+  */
 }
 
 kbd kbd:first-child {
@@ -383,7 +379,7 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
   td.content {
     padding-left: @gap-standard;
     padding-right: @gap-standard;
-    border-left: @hr-border-width @hr-border-style @blockquote-border-color; 
+    border-left: @blockquote-border-width @blockquote-border-style @blockquote-border-color; 
 
     //& > .paragraph:last-child > p {
     & > :last-child > :last-child {
@@ -395,7 +391,7 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
 .exampleblock > .content {
   padding: (@line-height-computed / 2) @line-height-computed;
   margin: 0 0 @line-height-computed;
-  border-left: @hr-border-width @hr-border-style @example-border-color;
+  border-left: @example-border-width @example-border-style @example-border-color;
   color: @example-font-color;
   //margin-bottom: @line-height-computed / 2;
 }
@@ -421,12 +417,11 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
   }
 }
 
-
 .literalblock {
-  & pre:not([class]) {
-    background: @body-bg;
-  }
   & pre, & pre[class] {
+    color: @literalblock-color;
+    background-color: inherit;
+	
     border: 0;
     padding: 0;
     word-wrap: break-word;
@@ -440,11 +435,6 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
     & > code {
       display: block;
     }
-
-	font-family: @font-family-base;
-	font-size: @font-size-base;
-	font-weight: normal;
-	color: @text-color;
   }
 }
 
@@ -531,7 +521,7 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
   padding: (@line-height-computed / 2) @line-height-computed;
   margin: 0 0 @line-height-computed;
   font-size: (@font-size-base * 1.25);
-  border-left: @hr-border-width @hr-border-style @blockquote-border-color;
+  border-left: @blockquote-border-width @blockquote-border-style @blockquote-border-color;
 	
   blockquote {
     padding: 0 0 @gap-narrow 0;
@@ -555,7 +545,7 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
   padding: (@line-height-computed / 2) @line-height-computed;
   margin: 0 0 @line-height-computed;
   font-size: (@font-size-base * 1.25);
-  border-left: @hr-border-width @hr-border-style @blockquote-border-color;
+  border-left: @blockquote-border-width @blockquote-border-style @blockquote-border-color;
 	
   pre {
     padding: 0 0 @gap-narrow 0;
