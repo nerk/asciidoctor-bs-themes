@@ -2,29 +2,11 @@
  * This is based on Dan Allen's _asciidoc.scss 
  * https://github.com/asciidoctor/asciidoctor-stylesheet-factory/tree/master/sass/components
  */
- 
 
-pre {
-  line-height: @pre-line-height;
-  // this overrides what was set on code
-  color: @text-color;
-  font-family: @pre-font-family;
-  font-weight: normal;
-}
-
-/*
- * <code> is styled differently if inside <pre>
- */
-pre > code {
-  font-size: @code-font-size;
-  white-space: inherit;
-  color: @text-color;
-  font-family: @font-family-monospace;
-  //padding: 0;
-  //background: @code-bg;
-  font-weight: normal;
-//  border: none;
-}
+//pre {
+//  max-height: @pre-scrollable-max-height;
+//  overflow-y: auto;
+//}
 
 /*
  * Experimental macro kbd:[]
@@ -95,28 +77,29 @@ kbd kbd:last-child {
 
 
 #header {
-  margin-bottom: @block-margin-bottom * 2;
-  margin-top: @gap-standard;
+  margin-top: @line-height-computed;
+  margin-bottom: (@line-height-computed / 2);
+
   & > h1 {
     color: @title-font-color;
     font-weight: @title-font-weight;
-    //border-bottom: @hr-border-width @hr-border-style @hr-border-color;
-    margin-bottom: -28px;
-    padding-bottom: 32px;
+    margin-bottom: -(@line-height-computed / 2);
+    padding-bottom: (@line-height-computed / 2);
   }
-
+  
   #revnumber {
     text-transform: capitalize;
   }
 
   br {
-    display: none;
-
+    
+	display: none;
+	
     & + span {
       padding-left: 3px;
     }
 
-    & + span:before {
+    & + span.email:before {
       content: "\2013 \0020";
     }
 
@@ -127,6 +110,10 @@ kbd kbd:last-child {
     & + span.author:before {
       content: ", ";
     }
+	
+	//& + span#revnumber {
+    //  display: block;
+    //}
   }
 }
 
@@ -462,16 +449,7 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
 }
 
 .listingblock {
-  & pre:not([class]) {
-    background: @pre-bg;
-	color: @pre-color;
-  }
-  & pre, & pre[class] {
-    border-width: @pre-border-size;
-	.border-style(@pre-border-size; @pre-border-style; @pre-border-color);
-    padding: @pre-padding;
-    word-wrap: break-word;
-
+  & pre {
     &.nowrap {
       overflow-x: auto;
       white-space: pre;
@@ -497,7 +475,7 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
 }
 
 .listingblock pre.highlight {
-  padding: 0;
+  padding: 3px; //hack
   & > code {
     padding: @pre-padding;
   }
