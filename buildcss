@@ -6,4 +6,5 @@ for i in $styles
 do
    echo creating css/bootstrap_$i.css
    lessc src/less/styles/$i/styles.less css/bootstrap_$i.css
+   cleancss -o css/bootstrap_$i.min.css css/bootstrap_$i.css
 done

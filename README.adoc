@@ -36,7 +36,8 @@ The following software must be installed before you start:
   * http://www.lesscss.org/[Less]
   * http://asciidoctor.org[Asciidoctor]
 
-NOTE: Make sure that the Ruby gems 'tilt' and 'coderay' are installed.
+NOTE: Make sure that the Ruby gems +tilt+ and +coderay+ are installed. For node.js, 
++clean-css+ must be installed in addition to +less+.
 
 == Setup
 
@@ -52,21 +53,7 @@ Next, switch to the 'asciidoctor-bs-themes' directory and generate the CSS files
  $ cd asciidoctor-bs-themes
  $ ./buildcss
 
-This creates the following CSS files in directory +css+:
-
------
-bootstrap_amelia.css
-bootstrap_cerulean.css
-bootstrap_cosmo.css
-bootstrap_cyborg.css
-bootstrap_default.css
-bootstrap_flatly.css
-bootstrap_journal.css
-bootstrap_readable.css
-bootstrap_slate.css
-bootstrap_spacelab.css
-bootstrap_yeti.css
------
+This creates the CSS files (regular and minified versions) in directory +css+.
 
 You may test your created themes by generating some example documents from directory +test+:
 
