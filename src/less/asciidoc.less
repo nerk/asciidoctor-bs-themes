@@ -8,7 +8,7 @@
 //  overflow-y: auto;
 //}
 
-/*
+/***********************************************************
  * Experimental macro kbd:[]
  */
  
@@ -37,7 +37,7 @@ kbd kbd:last-child {
 }
 
 
-/*
+/***********************************************************
  * Experimental macro menu:[]
  */
 
@@ -45,7 +45,7 @@ kbd kbd:last-child {
   color: darken(@text-color, 10%);
 }
 
-/*
+/***********************************************************
  * Experimental macro btn:[]
  */
  
@@ -55,6 +55,11 @@ kbd kbd:last-child {
    .btn-xs;
 }
 
+
+/***********************************************************
+ * Special AsciiDoc elements
+ */
+ 
 #header,
 #content,
 #footnotes,
@@ -112,7 +117,6 @@ kbd kbd:last-child {
     //}
   }
 }
-
 
 
 #toc {
@@ -315,6 +319,9 @@ kbd kbd:last-child {
   margin-bottom: @block-margin-bottom;
 }
 
+/***********************************************************
+ * Titles and captions
+ */
 .admonitionblock td.content,
 .exampleblock,
 .imageblock,
@@ -349,6 +356,10 @@ kbd kbd:last-child {
   max-width: 0;
 }
 
+/***********************************************************
+ * Lead paragraph
+ */
+ 
 .paragraph.lead > p,
 #preamble > .sectionbody > .paragraph:first-of-type p {
   .lead;
@@ -359,6 +370,10 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
   font-size: inherit;
 }
 
+/***********************************************************
+ * Admonition block
+ */
+ 
 .admonitionblock > table {
   border: 0;
   background: none;
@@ -388,6 +403,10 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
   }
 }
 
+/***********************************************************
+ * Example and sidebar blocks
+ */
+ 
 .exampleblock > .content {
   padding: (@line-height-computed / 2) @line-height-computed;
   margin: 0 0 @line-height-computed;
@@ -395,7 +414,7 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
   color: @example-font-color;
   //margin-bottom: @line-height-computed / 2;
 }
-
+ 
 .sidebarblock {
   & > .content {
     & > .title {
@@ -417,6 +436,10 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
   }
 }
 
+/***********************************************************
+ * Literal block
+ */
+ 
 .literalblock {
   & pre, & pre[class] {
     color: @literalblock-color;
@@ -438,6 +461,11 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
   }
 }
 
+
+/***********************************************************
+ * Code listing block
+ */
+ 
 .listingblock {
   & pre {
     &.nowrap {
@@ -516,8 +544,9 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
 .listingblock:hover code.xml:before { content: "xml"; }
 .listingblock:hover code.yaml:before { content: "yaml"; }
 
-/*
- * Quote blocks
+
+/***********************************************************
+ * Quote block
  */
  
 .quoteblock {
@@ -540,8 +569,8 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
   };
 }
 
-/*
- * Verse blocks
+/***********************************************************
+ * Verse block
  */
  
 .verseblock {
@@ -567,8 +596,9 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
   };
 }
 
-
-// Overrides for Pygments default styles
+/***********************************************************
+ * Overrides for Pygments default styles
+ */
 table.pyhltable {
   border: 0;
   margin-bottom: 0;
@@ -604,8 +634,8 @@ table.pyhltable .linenodiv {
 }
 
 
-/**
- * Tables. 
+/***********************************************************
+ * Tables
  */
 
 table.tableblock {
@@ -688,8 +718,9 @@ td > div.verse {
 }
 
 
-
-// AsciiDoc list styles
+/***********************************************************
+ * AsciiDoc list styles
+ */
 
 /**
 ul {
@@ -834,7 +865,7 @@ td.hdlist2 {
 }
 
 
-
+/// FIXME
 .thumb,
 .th {
   line-height: 0;
@@ -846,7 +877,10 @@ td.hdlist2 {
   //@thumbnail-caption-padding:   9px;
 }
 
-
+/***********************************************************
+ * Image block
+ */
+ 
 .imageblock {
   &.left,
   &[style*="float: left"] {
@@ -898,8 +932,10 @@ a.image {
   text-decoration: none;
 }
 
-
-// AsciiDoc footnote styles
+/***********************************************************
+ * AsciiDoc footnote styles
+ */
+ 
 span.footnote,
 span.footnoteref {
   vertical-align: super;
@@ -955,7 +991,9 @@ span.footnoteref {
   }
 }
 
-// AsciiDoc built-in roles
+/***********************************************************
+ * AsciiDoc built-in roles
+ */
 
 div.unbreakable {
   page-break-inside: avoid;
