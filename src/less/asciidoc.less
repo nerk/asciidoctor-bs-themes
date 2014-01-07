@@ -84,17 +84,21 @@ kbd kbd:last-child {
   & > h1 {
     color: @title-font-color;
     font-weight: @title-font-weight;
-    margin-bottom: -(@line-height-computed / 2);
-    padding-bottom: (@line-height-computed / 2);
   }
   
   #revnumber {
     text-transform: capitalize;
   }
 
-  br {
-    
-	display: none;
+  & > #author + br {
+    display: none;
+  }
+  
+  & > h1 + span {
+     padding-left: 3px;
+  }
+  
+  & > br {
 	
     & + span {
       padding-left: 3px;
@@ -111,10 +115,6 @@ kbd kbd:last-child {
     & + span.author:before {
       content: ", ";
     }
-	
-	//& + span#revnumber {
-    //  display: block;
-    //}
   }
 }
 
