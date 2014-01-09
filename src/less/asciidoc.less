@@ -254,7 +254,7 @@ kbd kbd:last-child {
 
 #footer {
   max-width: 100%;
-  //margin-top: @block-margin-bottom * 2;
+  margin-top: @line-height-computed;
   background-color: @gray-lighter;
   padding: @block-padding;
 }
@@ -442,7 +442,7 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
  
 .literalblock {
   & pre, & pre[class] {
-    color: @literalblock-color;
+    color: @pre-color;
     background-color: inherit;
 	
     border: 0;
@@ -466,6 +466,14 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
  * Code listing block
  */
  
+ // Use role="prescrollable" in listingblock
+.listingblock.prescrollable {
+  & pre {
+      max-height: @pre-scrollable-max-height;
+      overflow-y: auto;
+  }
+}
+  
 .listingblock {
   & pre {
     &.nowrap {
@@ -473,7 +481,7 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
       white-space: pre;
       word-wrap: normal;
     }
-    
+
     & > code {
       display: block;
     }
@@ -741,7 +749,7 @@ ul li ol {
 **/
 
 dl dd {
-  margin-left: @gap-wide;
+  margin-left: @definition-list-content-margin-left;
 }
 
 dl dd:last-child,
@@ -757,7 +765,7 @@ ol dd,
 .ulist .ulist,
 .ulist .olist,
 .olist .ulist {
-  margin-bottom: @paragraph-margin-bottom / 2;
+  margin-bottom: (@line-height-computed / 2);
 }
 
 ul.unstyled,
@@ -948,7 +956,7 @@ span.footnoteref {
 #footnotes {
   padding-top: @gap-narrow;
   padding-bottom: @gap-narrow;
-  margin-bottom: @block-margin-bottom / 2;
+  margin-bottom: (@line-height-computed / 2);
   hr {
     width: 20%;
     min-width: @gap-wide;
@@ -975,7 +983,7 @@ span.footnoteref {
 
 // footnotes in embedded documents
 #content #footnotes {
-  margin-top: -@block-margin-bottom / 2;
+  margin-top: -(@line-height-computed / 2);
   margin-bottom: 0;
   padding: @gap-standard 0;
 }

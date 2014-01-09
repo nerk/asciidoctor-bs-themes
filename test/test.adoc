@@ -81,7 +81,7 @@ class Main {
 
 Source code listing:
 
-[source,java]
+[source,java,options="nowrap",role="prescrollable"]
 ----
 class Main {
    void main(String ars[]) { <1>
