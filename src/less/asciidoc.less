@@ -8,6 +8,9 @@
 //  overflow-y: auto;
 //}
 
+.float-group:before, .float-group:after { content: " "; display: table; }
+.float-group:after { clear: both; }
+ 
 /***********************************************************
  * Experimental macro kbd:[]
  */
@@ -733,24 +736,6 @@ td > div.verse {
  * AsciiDoc list styles
  */
 
-/**
-ul {
-  margin-left: @list-side-margin;
-  //padding-left: 0;
-}
-
-ol {
-  margin-left: @list-side-margin;
-  //padding-left: 0;
-}
-
-
-ul li ol {
-  margin-left: @list-side-margin;
-  //padding-left: 0;
-}
-**/
-
 dl dd {
   margin-left: @definition-list-content-margin-left;
 }
@@ -781,7 +766,7 @@ ul.none {
 ul.unstyled,
 ol.unnumbered,
 ul.checklist {
-  margin-left: @list-side-margin;
+  padding-left: 1.6em;
 }
 
 // give the checkbox some room
@@ -875,17 +860,51 @@ td.hdlist2 {
   color: darken(@brand-primary, 5%);
 }
 
+/***********************************************************
+ * Inline images
+ */
 
-/// FIXME
-.thumb,
-.th {
+.image {
+  &.left,
+  &.right {
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+	
+    &.thumb {
+       margin-top: 0.4em;
+       margin-bottom: 0em;
+	}
+
+    display: inline-block;
+    line-height: 0;
+  }
+
+  &.left {
+    float: left;
+    margin-right: 0.8em;
+  }
+
+  &.right {
+    float: right;
+    margin-left: 0.8em;
+  }
+  
+  &.thumb img {
+    .thumbnail;
+    margin-bottom: @line-height-computed / 2;
+    text-decoration: none;
+  }
+}
+
+.thumb {
   line-height: 0;
   display: inline-block;
-  border: @thumb-border-style @thumb-border-width @thumbnail-border;
-  //@thumb-border-style: solid;
-  //@thumb-border-width: 1px;
-  //@thumbnail-caption-color:     @text-color;
-  //@thumbnail-caption-padding:   9px;
+}
+
+a.image img {
+  &:hover, &:focus, &:active {
+    border-color: @link-hover-color;
+  }
 }
 
 /***********************************************************
@@ -906,41 +925,10 @@ td.hdlist2 {
     margin-bottom: 0;
   }
 
-  &.thumb,
-  &.th {
-    border-width: @thumb-border-width + (@thumb-border-width * .5);
-    & > .title {
-      padding: 0 0.5em;
-    }
+  &.thumb img {
+    .thumbnail;
+    margin-bottom: @line-height-computed;
   }
-}
-
-.image {
-  // QUESTION should we require the related role?
-  // "related" mean "illustrative" or "supporting" of the text
-  //&.related,
-  //&.rel {
-  //}
-
-  &.left,
-  &.right {
-    margin-top: 0.4em;
-    margin-bottom: 0.4em;
-    display: inline-block;
-    line-height: 0;
-  }
-
-  &.left {
-    margin-right: 0.8em;
-  }
-
-  &.right {
-    margin-left: 0.8em;
-  }
-}
-
-a.image {
-  text-decoration: none;
 }
 
 /***********************************************************

@@ -182,6 +182,42 @@ Back-to-back with previous interval.
 
 |====
 
+.Regular list
+
+* item 1
+* item 2
+* item 3
+
+.Checklist
+- [*] checked
+- [x] also checked
+- [ ] not checked
+-     normal list item
+
+== Thumbnails and Images
+
+// Use "float-group" (asciidoctor) or "clearfix" (Bootstrap) to limit 
+// floating to a block or paragraph
+ 
+[role="clearfix"]
+image:../thumbnail.png["My thumbnail",role="thumb right",link="../thumbnail.png"]
+Here's text that will wrap around the image to the left. Thumbnail is linked to an image (itself in this case).
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
+nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
+Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+// Floating stops here
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
+nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
+Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+Here is an image with a title:
+
+.Image title
+image::../image.png[role="thumb",link="../thumbnail.png"]
+
 == Experimental
 
 kbd:[Alt]+kbd:[F1]
