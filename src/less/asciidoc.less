@@ -120,7 +120,7 @@ kbd kbd:last-child {
 
 
 #toc {
-  margin-bottom: @block-margin-bottom * 2;
+  margin-bottom: (@line-height-computed / 2);
   padding-bottom: @block-padding-bottom;
   & > ul {
     margin-left: @gap-narrow;
@@ -316,7 +316,7 @@ kbd kbd:last-child {
 .mathblock,
 .verseblock,
 .videoblock {
-  margin-bottom: @block-margin-bottom;
+  margin-bottom: (@line-height-computed / 2);
 }
 
 /***********************************************************
@@ -411,6 +411,9 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
   padding: (@line-height-computed / 2) @line-height-computed;
   margin: 0 0 @line-height-computed;
   border-left: @example-border-width @example-border-style @example-border-color;
+  border-right: 1px @example-border-style @example-border-color;
+  border-top: 1px @example-border-style @example-border-color;
+  border-bottom: 1px @example-border-style @example-border-color;
   color: @example-font-color;
   //margin-bottom: @line-height-computed / 2;
 }
@@ -442,7 +445,7 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
  
 .literalblock {
   & pre, & pre[class] {
-    color: @pre-color;
+    color: @literalblock-color;
     background-color: inherit;
 	
     border: 0;
@@ -648,7 +651,7 @@ table.pyhltable .linenodiv {
 
 table.tableblock {
   .table-bordered;
-  margin-bottom: @block-margin-bottom;
+  margin-bottom: (@line-height-computed / 2);
   
   td .paragraph:last-child p,
   th, td {
@@ -892,11 +895,11 @@ td.hdlist2 {
 .imageblock {
   &.left,
   &[style*="float: left"] {
-    margin: 0.8em 0.8em @block-margin-bottom 0;
+    margin: 0.8em 0.8em (@line-height-computed / 2) 0;
   }
   &.right,
   &[style*="float: right"] {
-    margin: 0.8em 0 @block-margin-bottom 0.8em;
+    margin: 0.8em 0 (@line-height-computed / 2) 0.8em;
   }
 
   & > .title {
@@ -1010,10 +1013,11 @@ div.unbreakable {
 .big {
    font-size: larger;
 }
-  
-.small {
-  font-size: smaller;
-}
+
+// Already defined by Bootstrap
+//.small {
+//  font-size: smaller;
+//}
 
 .underline {
    text-decoration: underline;
