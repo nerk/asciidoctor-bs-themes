@@ -3,7 +3,7 @@ Thomas Kern
 :idprefix:
 :idseparator: -
 :sources: https://github.com/nerk/asciidoctor-bs-themes
-:license: https://github.com/nerk/asciidoctor-bs-themes/blob/master/LICENSE
+:license: https://github.com/nerk/asciidoctor-bs-themes/blob/master/LICENSE.txt
 
 Create style sheets to theme AsciiDoc HTML output using http://www.getbootstrap.com[Bootstrap] and free themes from http://bootswatch.com/[Bootswatch].
 
@@ -171,6 +171,6 @@ may be explicitly switched off using the +grid+ and +frame+ attributes.
 == Copyright
 
 Copyright (C) 2014 Thomas Kern.
-Free use of this software is granted under the terms of the MIT License.
 
+Licensed under Apache License 2.0
 See the {license}[LICENSE] file for details.
