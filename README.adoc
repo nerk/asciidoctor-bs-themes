@@ -60,7 +60,7 @@ You may test your created themes by generating some example documents from direc
  $ cd test
  $ ./gendoc
  
-This compiles the original AsciiDoc User Guide by Stuart Rackham and a file named 'test.adoc'
+This compiles a file named 'test.adoc'
 for each of the generated styles and puts the HTML output into directory 'output'.
 
 == Using Generated Styles
