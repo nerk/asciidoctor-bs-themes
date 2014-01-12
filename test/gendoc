@@ -7,6 +7,5 @@ mkdir output
 
 for i in $styles
 do
-    asciidoctor -a stylesheet="../css/bootstrap_$i.css" -o output/userguide_$i.html userguide.adoc
     asciidoctor -a stylesheet="../css/bootstrap_$i.css" -o output/test_$i.html test.adoc
 done
