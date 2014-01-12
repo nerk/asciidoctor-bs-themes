@@ -1,5 +1,6 @@
 :toc:
-:source-highlighter: highlightjs
+//:source-highlighter: highlightjs
+:source-highlighter: coderay
 :icons: font
 :experimental:
 
@@ -135,12 +136,12 @@ paragraph (indented) like
 incorrectly processed as list.
 ....
  
-.Literal Paragraph with style attribute
+.Paragraph with literal style attribute
 [literal]
 This is a literal paragraph
 with literal style attribute.
 
-.Literal Paragraph (indented)
+.Literal Paragraph (implicit by indentation)
 
   This is a literal paragraph
   with literal style attribute.

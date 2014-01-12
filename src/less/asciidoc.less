@@ -1,13 +1,11 @@
-/*
- * This is based on Dan Allen's _asciidoc.scss 
- * https://github.com/asciidoctor/asciidoctor-stylesheet-factory/tree/master/sass/components
- */
+// This is based on Dan Allen's _asciidoc.scss 
+// https://github.com/asciidoctor/asciidoctor-stylesheet-factory/tree/master/sass/components
+//
+// This defines styles for all AsciiDoc specific markup.
+// ------------------------------------------------------------------------------------------
 
-//pre {
-//  max-height: @pre-scrollable-max-height;
-//  overflow-y: auto;
-//}
 
+// clearfix compatible hack as used by asciidoctor 1.5
 .float-group:before, .float-group:after { content: " "; display: table; }
 .float-group:after { clear: both; }
  
@@ -465,8 +463,11 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
       display: block;
     }
   }
+  
+  & + .colist {
+    margin-top: -0.5em;
+  }
 }
-
 
 /***********************************************************
  * Code listing block
@@ -492,6 +493,10 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
       display: block;
     }
 
+	& + .colist {
+      margin-top: -0.5em;
+    }
+  
     @media @media-large {
       font-size: @pre-font-size * .8; 
     }
@@ -557,7 +562,6 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
 .listingblock:hover code.scss:before { content: "scss"; }
 .listingblock:hover code.xml:before { content: "xml"; }
 .listingblock:hover code.yaml:before { content: "yaml"; }
-
 
 /***********************************************************
  * Quote block
@@ -838,11 +842,6 @@ td.hdlist1 {
 td.hdlist1,
 td.hdlist2 {
   vertical-align: top;
-}
-
-.literalblock + .colist,
-.listingblock + .colist {
-  margin-top: -0.5em;
 }
 
 .colist > table {
