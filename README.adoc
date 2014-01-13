@@ -61,16 +61,30 @@ You may test your created themes by generating some example documents from direc
  $ ./gendoc
  
 This compiles a file named 'test.adoc'
-for each of the generated styles and puts the HTML output into directory 'output'.
+for each of the generated styles and puts the generated HTML into directory 'output'.
 
-To view the generated files, start a webserver with directory 'test' as the root directory. For example, you
-may use python. Invoke the following command from directory 'test':
+
+NOTE: Some +bootswatch.less+ files for some of the styles import Google Fonts
+using a 'scheme-relative' URI. The import will not work if the file is opened
+directly in a browser from the file system. This is the reason why you need to serve the generated files
+from a web server.
+
+To view the generated files, start a webserver with directory 'test' as the root directory. 
+If you have 'python' installed, invoke the following command from directory 'test':
 
  $ python -m SimpleHTTPServer
  
+If 'python' is not installed, you may want to install a web server for 'node.js':
+
+  $ npm install -g local-web-server
+  
+Start the web server from directory 'test':
+
+  $ ws
+
 Now enter the following URL in your browser:
 
- http://localhost:8000/output/test_cosmo.html 
+  http://localhost:8000/output/test_cosmo.html 
  
 
 == Using Generated Styles
@@ -125,8 +139,10 @@ new style is named 'awesome'):
 * Inside +src/less/styles/awesome+, create a new file named +styles.less+ with the following content:
 +
 ----
-@import url(http://raw.github.com/twbs/bootstrap/master/less/bootstrap.less);
+@import "../../versions.less";
 
+// Use bootstrap directly from Twitter, not from bootswatch
+@import url(http://raw.github.com/twbs/bootstrap/@{bs-version}/less/bootstrap.less);
 @import "variables.less";
 
 @import "../../adocvariables.less";
