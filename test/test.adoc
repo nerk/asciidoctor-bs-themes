@@ -201,7 +201,7 @@ Back-to-back with previous interval.
 // floating to a block or paragraph
  
 [role="clearfix"]
-image:../thumbnail.png["My thumbnail",role="thumb right",link="../thumbnail.png"]
+image:/thumbnail.png["My thumbnail",role="thumb right",link="/thumbnail.png"]
 Here's text that will wrap around the image to the left. Thumbnail is linked to an image (itself in this case).
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
 nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
@@ -217,7 +217,7 @@ Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit ame
 Here is an image with a title:
 
 .Image title
-image::../image.png[role="thumb",link="../thumbnail.png"]
+image::/image.png[role="thumb",link="/image.png"]
 
 == Experimental
 

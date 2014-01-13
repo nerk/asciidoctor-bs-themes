@@ -63,6 +63,16 @@ You may test your created themes by generating some example documents from direc
 This compiles a file named 'test.adoc'
 for each of the generated styles and puts the HTML output into directory 'output'.
 
+To view the generated file, start a webserver with directory 'test' as the root directory. For example, you
+may use python:
+
+ $ python -m SimpleHTTPServer
+ 
+Now enter the following URL in your browser:
+
+ http://localhost:8000/output/test_cosmo.html 
+ 
+
 == Using Generated Styles
 
 To create HTML from an AsciiDoc source using a generated style, you may specify the CSS stylesheet 
