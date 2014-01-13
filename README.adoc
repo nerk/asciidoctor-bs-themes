@@ -63,8 +63,8 @@ You may test your created themes by generating some example documents from direc
 This compiles a file named 'test.adoc'
 for each of the generated styles and puts the HTML output into directory 'output'.
 
-To view the generated file, start a webserver with directory 'test' as the root directory. For example, you
-may use python:
+To view the generated files, start a webserver with directory 'test' as the root directory. For example, you
+may use python. Invoke the following command from directory 'test':
 
  $ python -m SimpleHTTPServer
  
