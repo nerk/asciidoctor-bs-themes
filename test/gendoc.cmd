@@ -1,6 +1,6 @@
 @echo off
 
-set styles=default default_themed amelia cerulean cosmo cyborg flatly journal readable slate spacelab yeti
+set styles=default default_themed amelia cerulean cosmo cyborg darkly flatly journal lumen united readable simplex slate spacelab superhero yeti
 
 IF NOT EXIST output MD output
 
