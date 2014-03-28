@@ -2,7 +2,7 @@ Asciidoctor Bootstrap Themes
 ----------------------------
 
 Copyright 2014 Thomas Kern
-Licensed under Apache License 2.0
+Licensed under MIT License
 See file LICENSE for details.
 
 This product includes the following software with their respective
