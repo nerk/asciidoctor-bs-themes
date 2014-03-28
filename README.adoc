@@ -198,5 +198,5 @@ may be explicitly switched off using the +grid+ and +frame+ attributes.
 
 Copyright (C) 2014 Thomas Kern.
 
-Licensed under Apache License 2.0
+Licensed under MIT License
 See the {license}[LICENSE] file for details.
