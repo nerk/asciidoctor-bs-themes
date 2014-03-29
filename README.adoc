@@ -84,8 +84,9 @@ Start the web server from directory 'test':
 
 Now enter the following URL in your browser:
 
-  http://localhost:8000/output/test_cosmo.html 
- 
+  http://localhost:8000/output/
+
+Your browser will now display a list of generated HTML files, one for each style.
 
 == Using Generated Styles
 
