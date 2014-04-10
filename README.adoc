@@ -140,10 +140,7 @@ new style is named 'awesome'):
 * Inside +src/less/styles/awesome+, create a new file named +styles.less+ with the following content:
 +
 ----
-@import "../../versions.less";
-
-// Use bootstrap directly from Twitter, not from bootswatch
-@import url(http://raw.github.com/twbs/bootstrap/@{bs-version}/less/bootstrap.less);
+@import url("@{bsw-root}/bower_components/bootstrap/less/bootstrap.less");
 @import "variables.less";
 
 @import "../../adocvariables.less";
