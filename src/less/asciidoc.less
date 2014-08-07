@@ -311,10 +311,12 @@ kbd kbd:last-child {
 // AsciiDoc block styles
 
 // these blocks that don't inherit panel styles
+.audioblock,
 .imageblock,
 .literalblock,
 .listingblock,
 .mathblock,
+.stemblock,
 .verseblock,
 .videoblock {
   margin-bottom: (@line-height-computed / 2);
@@ -324,16 +326,17 @@ kbd kbd:last-child {
  * Titles and captions
  */
 .admonitionblock td.content,
+.audioblock,
 .exampleblock,
 .imageblock,
 .listingblock,
 .literalblock,
-.mathblock,
+.stemblock,
 .openblock,
 .paragraph,
 .quoteblock,
+table.tableblock,
 .sidebarblock,
-.tableblock,
 .verseblock,
 .videoblock,
 .dlist,
@@ -382,7 +385,6 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
   margin-bottom: (@line-height-computed / 2);
   
   td.icon {
-    font-size: 2.5em;
     text-align: center;
     width: @icon-width;
     img {
@@ -423,11 +425,11 @@ table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p {
 .sidebarblock {
   & > .content {
     & > .title {
-	font-size: @font-size-h4;
-    margin-bottom: (@line-height-computed / 2);
-    line-height: @line-height-computed;  
+      font-size: @font-size-h4;
+      margin-bottom: (@line-height-computed / 2);
+      line-height: @line-height-computed;  
     }
-	.well;
+    .well;
   }
 }
 
@@ -775,7 +777,7 @@ ul.checklist {
 }
 
 // give the checkbox some room
-ul.checklist li > p:first-child > i[class^="icon-check"]:first-child,
+ul.checklist li > p:first-child > fa-check-square-o:first-child,
 ul.checklist li > p:first-child > input[type="checkbox"]:first-child {
   margin-right: 0.25em;
 }
