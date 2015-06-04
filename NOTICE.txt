@@ -1,7 +1,7 @@
 Asciidoctor Bootstrap Themes
 ----------------------------
 
-Copyright 2014 Thomas Kern
+Copyright 2014-2015 Thomas Kern
 Licensed under MIT License
 See file LICENSE for details.
 

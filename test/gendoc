@@ -1,6 +1,6 @@
 #!/bin/bash
 
-styles="default default_themed amelia cerulean cosmo cyborg darkly flatly journal lumen united readable simplex slate spacelab superhero yeti"
+styles="default default_themed cerulean cosmo custom cyborg darkly flatly journal lumen paper readable sandstone simplex slate spacelab superhero united yeti"
 
 rm -fr output > /dev/null
 mkdir output

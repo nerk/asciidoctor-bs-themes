@@ -123,7 +123,7 @@ When compiling your document, you must specify the location of the template dire
 
  asciidoctor -T src/templates -a stylesheet="css/bootstrap_flatly.css" thedocument.adoc
 
-NOTE: The included +document.html.erb+ template was tested with Asciidoctor 0.1.4 and may
+NOTE: The included +document.html.erb+ template was tested with Asciidoctor 1.5.2 and may
 not work with other versions.
 
 == Custom Styles
@@ -194,7 +194,7 @@ may be explicitly switched off using the +grid+ and +frame+ attributes.
    
 == Copyright
 
-Copyright (C) 2014 Thomas Kern.
+Copyright (C) 2014-2015 Thomas Kern.
 
 Licensed under MIT License.
 See the {license}[LICENSE] file for details.
