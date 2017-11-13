@@ -6,6 +6,6 @@ for i in $styles
 do
    echo creating css/bootstrap_$i.css
    # current lessc produces some warnings due to a bug. -s silences this
-   lessc -s --global-var="bsw-root='https://raw.githubusercontent.com/thomaspark/bootswatch/gh-pages'" src/less/styles/$i/styles.less css/bootstrap_$i.css
+   lessc -s --global-var="bsw-root='https://raw.githubusercontent.com/thomaspark/bootswatch/v3.3.7'" src/less/styles/$i/styles.less css/bootstrap_$i.css
    cleancss -o css/bootstrap_$i.min.css css/bootstrap_$i.css
 done

@@ -35,9 +35,11 @@ The following software must be installed before you start:
 
   * http://www.lesscss.org/[Less]
   * http://asciidoctor.org[Asciidoctor]
+  * Ruby gems `tilt` and `coderay`
+  * Node module `clean-css-cli`
 
-NOTE: Make sure that the Ruby gems +tilt+ and +coderay+ are installed. For node.js, 
-+clean-css+ must be installed in addition to +less+.
+ $ gem install asciidoctor tilt coderay
+ $ npm install -g less-cli clean-css-cli
 
 == Setup
 
@@ -54,6 +56,8 @@ Next, switch to the 'asciidoctor-bs-themes' directory and generate the CSS files
  $ ./buildcss
 
 This creates the CSS files (regular and minified versions) in directory +css+.
+
+NOTE: Warnings about skipped imports related to Google fonts can be ignored.
 
 You may test your created themes by generating some example documents from directory +test+:
 
